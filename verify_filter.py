@@ -61,7 +61,7 @@ def extract_species_counts(file_path, region_data):
 
 
 region_data = extract_observation_dates('https://ebird.org/region/EC-F/bird-list')
-region_counts = extract_species_counts('canar_filter.html', region_data)
+region_counts = extract_species_counts('files/canar_filter.html', region_data)
 
 sorted_data = dict(sorted(
     region_counts.items(),

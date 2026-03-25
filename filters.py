@@ -22,8 +22,8 @@ def extract_species_counts(file_path):
     return species_map
 
 # Usage
-active_counts = extract_species_counts('active_filter.html')
-azuay_counts = extract_species_counts('azuay_filter.html')
+active_counts = extract_species_counts('files/active_filter.html')
+region_counts = extract_species_counts('files/canar_filter.html')
 
 def compare_species_dicts(dict1, dict2):
     all_keys = set(dict1) | set(dict2)
@@ -33,9 +33,9 @@ def compare_species_dicts(dict1, dict2):
         val2 = dict2.get(key)
 
         if val1 != val2:
-            print(f"❌ {key}: active → {val1}, azuay → {val2}")
+            print(f"❌ {key}: active → {val1}, canar → {val2}")
         #else:
         #    print(f"✅ {key}: {val1}")
 
 
-compare_species_dicts(active_counts, azuay_counts)
+compare_species_dicts(active_counts, region_counts)

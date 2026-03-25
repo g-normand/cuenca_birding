@@ -37,3 +37,6 @@ cuenca_birds:
 
 bird_list:
 	$(VENV) && python3 bird_list.py
+
+diff_cero_and_ebird:
+	$(VENV) && python3 diff_cero_and_ebird.py
