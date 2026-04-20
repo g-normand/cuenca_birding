@@ -35,6 +35,12 @@ verify_filter:
 cuenca_birds:
 	$(VENV) && python3 cuenca_birds.py
 
+lista_guia_uda:
+	$(VENV) && python3 diff_guide_ebird.py --guide guia_uda
+	
+lista_ucuenca:
+	$(VENV) && python3 diff_guide_ebird.py --guide ucuenca
+
 bird_list:
 	$(VENV) && python3 bird_list.py
 
