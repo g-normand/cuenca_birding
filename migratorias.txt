@@ -1,48 +1,144 @@
-Cinnamon Teal
 Blue-winged Teal
+Cinnamon Teal
+Northern Shoveler
+Lesser Scaup
+Least Bittern
+Great Blue Heron
+Great Egret
+Little Blue Heron
+Tricolored Heron
+Western Cattle-Egret
+Green Heron
+Black-crowned Night-Heron
+Osprey
+Swallow-tailed Kite
+Plumbeous Kite
+Mississippi Kite
+Broad-winged Hawk
+Swainson's Hawk
+Merlin
+Sora
+Black-bellied Plover
+American Golden-Plover
+Pacific Golden-Plover
+Semipalmated Plover
+Killdeer
+Piping Plover
+American Avocet
+Greater Yellowlegs
+Lesser Yellowlegs
+Solitary Sandpiper
+Wandering Tattler
+Willet
+Spotted Sandpiper
+Upland Sandpiper
+Whimbrel
+Hudsonian Godwit
+Marbled Godwit
+Ruddy Turnstone
+Surfbird
+Red Knot
+Sanderling
+Semipalmated Sandpiper
+Western Sandpiper
+Least Sandpiper
+White-rumped Sandpiper
+Baird's Sandpiper
+Pectoral Sandpiper
+Dunlin
+Curlew Sandpiper
+Stilt Sandpiper
+Buff-breasted Sandpiper
+Shortbilled Dowitcher
+Longbilled Dowitcher
+Common Snipe
+Rednecked Phalarope 
+Wilson's Phalarope
+Red Phalarope
+Laughing Gull
+Franklin's Gull
+Lesser Blackbacked Gull
+Herring Gull
+Ringbilled Gull
+California Gull
+Least Tern
+Caspian Tern
+Common Tern
+Arctic Tern
+Royal Tern
+Elegant Tern
+Sandwich Tern
+Black Tern
 Black-billed Cuckoo
 Yellow-billed Cuckoo
-Dark-billed Cuckoo
-Oilbird
-Sora
-Purple Gallinule
-Wilson's Phalarope
-Semipalmated Plover
-Lesser Yellowlegs
-Greater Yellowlegs
-White-rumped Sandpiper
-Ruddy Turnstone
-Least Sandpiper
-Stilt Sandpiper
-Pectoral Sandpiper
-Solitary Sandpiper
-Upland Sandpiper
-Black-bellied Plover
-Killdeer
-Franklin's Gull
-Laughing Gull
-Broad-winged Hawk
-White-throated Hawk
+Common Nighthawk
+Chimney Swift
 Western Wood-Pewee
 Eastern Wood-Pewee
-Alder Flycatcher
+Olive-sided Flycatcher
 Acadian Flycatcher
-American Redstart
-Snowy-throated Kingbird
+Alder Flycatcher
+Willow Flycatcher
+Great Crested Flycatcher
+Sulphur-bellied Flycatcher
 Eastern Kingbird
-Fork-tailed Flycatcher
-Bank Swallow
-Cliff Swallow
-Barn Swallow
-Swainson's Thrush
-Tennessee Warbler
-Mourning Warbler
-Blackburnian Warbler
-Northern Yellow Warbler
-Canada Warbler
+Gray Kingbird
+Yellow-throated Vireo 
 Red-eyed Vireo
-Chivi Vireo
 Yellow-green Vireo
+Purple Martin
+Tree Swallow
+Bank Swallow
+Barn Swallow
+Cliff Swallow
+Graycheeked Thrush
+Swainson's Thrush
+Red-throated Pipit
 Summer Tanager
 Scarlet Tanager
 Rose-breasted Grosbeak
+Blue Grosbeak
+Dickcissel
+Golden-winged Warbler
+Tennessee Warbler
+Northern Yellow Warbler
+Blackpoll Warbler
+Cerulean Warbler
+Black-throated Blue Warbler
+Baybreasted Warbler
+Black-throated Green Warbler 
+Blackburnian Warbler
+Chestnut-sided Warbler
+Black-and-white Warbler
+American Redstart
+Prothonotary Warbler
+Ovenbird
+Northern Waterthrush
+Connecticut Warbler
+Wilson's Warbler
+Canada Warbler
+Baltimore Oriole
+Bobolink
+White-throated Hawk
+Pearly-breasted Cuckoo
+Dark-billed Cuckoo
+Nacunda Nighthawk
+Large Elaenia
+Small-billed Elaenia
+White-browed Ground-Tyrant
+Dark-faced Ground-Tyrant
+Swainson's Flycatcher
+Streaked Flycatcher
+Crowned Slaty Flycatcher
+Variegated Flycatcher
+White-throated Kingbird
+Fork-tailed Flycatcher
+Southern Scrub-Flycatcher
+Chivi Vireo
+Brown-chested Martin
+Southern Martin
+Lined Seedeater
+Snowy-throated Kingbird
+Purple Gallinule
+Mourning Warbler
+Oilbird
