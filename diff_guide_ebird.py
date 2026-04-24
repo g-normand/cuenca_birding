@@ -23,7 +23,7 @@ def extract_observation_dates(list_urls):
     for url in list_urls:
         website = requests.get(f'{url}?hs_sortBy=taxon_order&hs_o=asc')   
         soup = BeautifulSoup(website.text, 'html.parser')
-        where = soup.find('div', class_='PlaceTitle-name').find('h1').get_text(strip=True)
+        hotspot = soup.find('div', class_='PlaceTitle-name').find('h1').get_text(strip=True)
         
         for li in soup.find_all('li', class_='BirdList-list-list-item'):
             time_tag = li.find('time')
@@ -42,12 +42,12 @@ def extract_observation_dates(list_urls):
                     if last_seen > result[name]['last_seen']:
                         #Newest
                         result[name] = dict(
-                            where=where,
+                            where=hotspot,
                             last_seen=last_seen,
                             birder=birder)
                 else:
                     result[name] = dict(
-                        where=where,
+                        where=hotspot,
                         last_seen=last_seen,
                         birder=birder)
 

@@ -1,6 +1,6 @@
 ### Configure paths. ###
 PROJECT_PATH := $(CURDIR)
-ENV_PATH := $(CURDIR)/filters_env
+ENV_PATH := $(CURDIR)/pyth_env
 PYTHON := $(ENV_PATH)/bin/python3.11
 TAG_NAME := DEPLOY
 TAG_DATE := $(TAG_NAME)_$(shell date -u "+%Y_%m_%d_%H_%M_%S")
@@ -41,8 +41,9 @@ lista_guia_uda:
 lista_ucuenca:
 	$(VENV) && python3 diff_guide_ebird.py --guide ucuenca
 
-bird_list:
-	$(VENV) && python3 bird_list.py
+cuenca_migratorias:
+	$(VENV) && python3 migratorias.py 
 
-diff_cero_and_ebird:
-	$(VENV) && python3 diff_cero_and_ebird.py
+bird_list_ecuador:
+	$(VENV) && python3 bird_list_ecuador.py
+

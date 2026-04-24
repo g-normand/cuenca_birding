@@ -1,3 +1,16 @@
+
+GET YEARLY CUENCA BIRD LIST
+__________
+make cuenca_birds
+make bird_list_ecuador &> species.csv
+
+_________
+make lista_guia_uda
+make lista_ucuenca
+make cuenca_migratorias
+
+
+
 ___________________
 FILTERS IN EBIRDS
 __________________
@@ -13,13 +26,3 @@ https://review.ebird.org/admin/viewFilter.htm?checklistID=CL24828 => Save as act
 https://review.ebird.org/admin/viewFilter.htm?checklistID=CL34436 => Save as canar_filter.html
 
 __________
-GET CUENCA BIRD LIST
-__________
-make cuenca_birds
-make bird_list &> species.csv
-
-
-__________
-EBIRD VS CERO
-__________
-make diff_cero_and_ebird

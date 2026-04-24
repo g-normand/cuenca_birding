@@ -1,0 +1,48 @@
+Cinnamon Teal
+Blue-winged Teal
+Black-billed Cuckoo
+Yellow-billed Cuckoo
+Dark-billed Cuckoo
+Oilbird
+Sora
+Purple Gallinule
+Wilson's Phalarope
+Semipalmated Plover
+Lesser Yellowlegs
+Greater Yellowlegs
+White-rumped Sandpiper
+Ruddy Turnstone
+Least Sandpiper
+Stilt Sandpiper
+Pectoral Sandpiper
+Solitary Sandpiper
+Upland Sandpiper
+Black-bellied Plover
+Killdeer
+Franklin's Gull
+Laughing Gull
+Broad-winged Hawk
+White-throated Hawk
+Western Wood-Pewee
+Eastern Wood-Pewee
+Alder Flycatcher
+Acadian Flycatcher
+American Redstart
+Snowy-throated Kingbird
+Eastern Kingbird
+Fork-tailed Flycatcher
+Bank Swallow
+Cliff Swallow
+Barn Swallow
+Swainson's Thrush
+Tennessee Warbler
+Mourning Warbler
+Blackburnian Warbler
+Northern Yellow Warbler
+Canada Warbler
+Red-eyed Vireo
+Chivi Vireo
+Yellow-green Vireo
+Summer Tanager
+Scarlet Tanager
+Rose-breasted Grosbeak
