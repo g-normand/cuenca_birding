@@ -41,6 +41,9 @@ lista_guia_uda:
 lista_ucuenca:
 	$(VENV) && python3 diff_guide_ebird.py --guide ucuenca
 
+lista_cajas:
+	$(VENV) && python3 diff_guide_ebird.py --guide cajas
+
 cuenca_migratorias:
 	$(VENV) && python3 migratorias.py 
 

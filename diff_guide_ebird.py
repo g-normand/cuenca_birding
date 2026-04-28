@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
 import requests
 import argparse
+import csv
     
 parser = argparse.ArgumentParser(
     description="Compare guide species with eBird"
@@ -11,7 +12,7 @@ parser.add_argument(
     "--guide",
     type=str,
     required=True,
-    help="Guide name (e.g. guia_uda, ucuenca)"
+    help="Guide name (guia_uda, ucuenca, cajas)"
 )
 
 args = parser.parse_args()
@@ -57,7 +58,12 @@ if (guide == 'ucuenca'):
     list_urls = [
      'https://ebird.org/hotspot/L40907383/bird-list', #U. Cuenca
     ]
-    file_guide = "ucuenca.txt"
+    file_guide = "files/guia_ucuenca.csv"
+elif (guide == 'cajas'):
+    list_urls = [
+     'https://ebird.org/hotspot/L600072/bird-list', #Cajas
+    ]
+    file_guide = "files/guia_cajas.csv"
 elif guide == 'guia_uda':
     list_urls = [
      'https://ebird.org/hotspot/L8552768/bird-list', #Camino al Cielo
@@ -72,22 +78,27 @@ elif guide == 'guia_uda':
      'https://ebird.org/hotspot/L18929810/bird-list', #Pico de Pescado
      'https://ebird.org/hotspot/L2763250/bird-list', #Cubilan
     ]
-    file_guide = "guia_uda.txt"
+    file_guide = "files/guia_uda.csv"
 else:
     raise Error('GUIA DESCONOCIDA')
 
 ebird_data = extract_observation_dates(list_urls)
 
-uda_data = {}
+guia_data = {}
 order = 1
-with open(file_guide) as fp:
-    lines = fp.readlines()
-    for species in lines:
-        uda_data[species.strip()] = dict(order=order)
+
+with open(file_guide, newline='', encoding='utf-8') as fp:
+    reader = csv.DictReader(fp, delimiter=';')
+
+    for row in reader:
+        species = row["especies"].strip()
+        if not species:
+            continue
+        guia_data[species] = dict(order=order, comentarios=row['comentarios'])
         order += 1
 
-only_in_ebird = {k: ebird_data[k] for k in ebird_data.keys() - uda_data.keys()}
-only_in_guide = {k: uda_data[k] for k in uda_data.keys() - ebird_data.keys()}
+only_in_ebird = {k: ebird_data[k] for k in ebird_data.keys() - guia_data.keys()}
+only_in_guide = {k: guia_data[k] for k in guia_data.keys() - ebird_data.keys()}
 
 
 print(f'SOLO EBIRD ({len(only_in_ebird)})')
@@ -96,4 +107,7 @@ for species in only_in_ebird:
 print('')
 print(f'SOLO GUIA ({len(only_in_guide)})')
 for species in only_in_guide:
-    print(species)
+    if len(guia_data[species]['comentarios']) > 0:
+        print(species,' (', guia_data[species]['comentarios'], ')')
+    else:
+        print(species)
