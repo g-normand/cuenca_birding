@@ -117,20 +117,18 @@ with open(file_guide, newline='', encoding='utf-8') as fp:
         species = row["especies"].strip()
         if not species:
             continue
-        guia_data[species] = dict(order=order, comentarios=row['comentarios'])
+        guia_data[species] = dict(order=order, comentarios=row['comentarios'], guia=row['guia'])
         order += 1
 
 only_in_ebird = {k: ebird_data[k] for k in ebird_data.keys() - guia_data.keys()}
 only_in_guide = {k: guia_data[k] for k in guia_data.keys() - ebird_data.keys()}
+new_in_guide = {species: data for species, data in guia_data.items() if data['guia'] == 'ebird'}
+guide_and_ebird = {k: ebird_data[k] for k in ebird_data.keys() & guia_data.keys()}
 
-
-# Sort "solo eBird" by most recent sighting first
-sorted_ebird = sorted(only_in_ebird.items(),
-                      key=lambda x: x[1]['last_seen'], reverse=True)
-
-# Sort "solo guía" by guide order
-sorted_guide = sorted(only_in_guide.items(),
-                      key=lambda x: x[1]['order'])
+sorted_ebird = sorted(only_in_ebird.items(), key=lambda x: x[1]['last_seen'], reverse=True)
+sorted_guide = sorted(only_in_guide.items(), key=lambda x: x[1]['order'])
+sorted_new_guide = sorted(new_in_guide.items(), key=lambda x: x[1]['order'])
+sorted_guide_and_ebird = sorted(guide_and_ebird.items(), key=lambda x: x[1]['last_seen'], reverse=True)
 
 html = f"""<!DOCTYPE html>
 <html lang="es">
@@ -164,17 +162,49 @@ for species, info in sorted_ebird:
     checklist = info.get('checklist')
     html += f"      <tr><td>{species}</td><td><a href='{checklist}'>{date_str}</a></td><td>{where}</td><td>{birder}</td></tr>\n"
 
-html += f"""    </tbody>
-  </table>
 
-  <h2>Solo en la guía <span class="badge">({len(only_in_guide)} especies)</span></h2>
-  <table>
-    <thead><tr><th>#</th><th>Especie</th><th>Comentarios</th></tr></thead>
+if(len(only_in_guide)) > 0:
+    html += f"""    </tbody>
+    </table>
+
+    <h2>Solo en la guía <span class="badge">({len(only_in_guide)} especies)</span></h2>
+    <table>
+        <thead><tr><th>Especie</th><th>Comentarios</th></tr></thead>
+        <tbody>
+    """
+    for species, info in sorted_guide:
+        comentarios = linkify(info.get('comentarios') or '—')
+        html += f"      <tr><td>{species}</td><td>{comentarios}</td></tr>\n"
+
+if(len(new_in_guide)) > 0:
+    html += f"""    </tbody>
+    </table>
+
+    <h2>Nuevo para la guía <span class="badge">({len(new_in_guide)} especies)</span></h2>
+    <table>
+        <thead><tr><th>Especie</th><th>Comentarios</th></tr></thead>
+        <tbody>
+    """
+    for species, info in sorted_new_guide:
+        comentarios = linkify(info.get('comentarios') or '—')
+        html += f"      <tr><td>{species}</td><td>{comentarios}</td></tr>\n"
+
+
+html += f"""    </tbody>
+</table>
+
+<h2>En la guía y en eBird <span class="badge">({len(guide_and_ebird)} especies)</span></h2>
+<table>
+    <thead><tr><th>Especie</th><th>Comentarios</th></tr></thead>
     <tbody>
 """
-for species, info in sorted_guide:
-    comentarios = linkify(info.get('comentarios') or '—')
-    html += f"      <tr><td>{info['order']}</td><td>{species}</td><td>{comentarios}</td></tr>\n"
+for species, info in sorted_guide_and_ebird:
+    date_str = info['last_seen'].strftime('%d/%m/%Y')
+    birder   = info.get('birder') or '—'
+    where    = info.get('where') or '—'
+    checklist = info.get('checklist')
+    html += f"      <tr><td>{species}</td><td><a href='{checklist}'>{date_str}</a></td><td>{where}</td><td>{birder}</td></tr>\n"
+
 
 html += """    </tbody>
   </table>

@@ -40,7 +40,7 @@ list_urls = [
  'https://ebird.org/hotspot/L8828943/bird-list', # La Calera
  'https://ebird.org/hotspot/L20491806/bird-list', #Tarqui Guzho
 ]
-file_guide = "dist/migratorias.txt"
+file_guide = "files/migratorias.txt"
 
 migratorias = {}
 with open(file_guide) as fp:

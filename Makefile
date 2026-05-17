@@ -54,6 +54,6 @@ cuenca_migratorias:
 bird_list_ecuador:
 	$(VENV) && python3 bird_list_ecuador.py
 
-deploy:
+deploy: lista_ucuenca lista_guia_uda lista_cajas cuenca_migratorias
 	scp -r dist/* guiguide@ssh-guiguide.alwaysdata.net:/home/guiguide/www/cuenca_birds/
 	git tag $(TAG_DATE); git push origin $(TAG_DATE) --no-verify
