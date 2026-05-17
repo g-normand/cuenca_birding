@@ -27,7 +27,7 @@ White-tipped Dove;etapa;
 Golden-plumed Parakeet;etapa;
 Barred Parakeet;etapa;
 Red-faced Parrot;etapa;
-White-capped Parrot;etapa;
+White-capped Parrot;etapa;Viven en grupos numerosos en los bosques montanos en donde se alimentan de frutos. Son muy bulliciosos y se los puede ver posados en árboles altos. Frecuentemente realizan movimientos migratorios altitudinales en la cordillera. Es raro
 Scaly-naped Amazon;etapa;
 White-throated Screech-Owl;etapa;
 Great Horned Owl;etapa/astudillo;
@@ -36,7 +36,7 @@ Rufous-banded Owl;etapa;
 Rufous-bellied Nighthawk;etapa;
 Band-winged Nightjar;etapa/astudillo;
 White-collared Swift;etapa/astudillo;
-Lesser Violetear;etapa;
+Lesser Violetear;etapa;Habita el bosque montano, matorrales y claros adyacentes. Usualmente se alimenta a mediana altura, entre los arbustos. Se la encuentra al occidente del PNC, donde es rara
 Sparkling Violetear;etapa/astudillo;
 Speckled Hummingbird;etapa;
 Ecuadorian Hillstar;etapa/astudillo;
@@ -47,7 +47,7 @@ Great Sapphirewing;etapa/astudillo;
 Collared Inca;etapa;
 Rainbow Starfrontlet;etapa/astudillo;
 Sword-billed Hummingbird;etapa;
-Chestnut-breasted Coronet;etapa;
+Chestnut-breasted Coronet;etapa;Colibrí arbóreo que habita zonas de bosque y claros. La coloración anaranjada de su vientre permite una identificación rápida. En el PNC existen registros de la especie en los bosques al occidente, en donde es poco común.
 Purple-throated Sunangel;etapa/astudillo;
 Glowing Puffleg;etapa;
 Sapphire-vented Puffleg;etapa/astudillo;
@@ -64,7 +64,7 @@ Masked Trogon;etapa;
 Gray-breasted Mountain-Toucan;etapa;
 Crimson-mantled Woodpecker;etapa;
 Bar-bellied Woodpecker;etapa;
-Powerful Woodpecker;etapa;
+Powerful Woodpecker;etapa;Habita los bosques montanos y bordes de bosque. Forman parejas y se los puede observar moviéndose entre troncos de árboles grandes a varias alturas. Es raro, con registros únicamente al occidente del PNC
 Chestnut-winged Cinclodes;etapa/astudillo;
 Stout-billed Cinclodes;etapa/astudillo;
 Andean Tit-Spinetail;etapa/astudillo;
@@ -88,14 +88,14 @@ White-throated Tyrannulet;etapa/astudillo;
 White-banded Tyrannulet;etapa/astudillo;
 Tufted Tit-Tyrant;etapa/astudillo;
 Agile Tit-Tyrant;etapa;
-Streak-necked Flycatcher;etapa;
+Streak-necked Flycatcher;etapa;Ocupa los bosques y zonas con arbustos. Se posa verticalmente inclinando la cabeza. Algunas veces se une a bandadas mixtas o se lo encuentra en agregaciones de tangaras u otras aves sobre árboles, donde es frecuente encontrarlo revoloteando junto a ramas cargadas de frutos. Habita las zonas de bosque al occidente del PNC, en donde es raro.
 Cinnamon Flycatcher;etapa;
 Black Phoebe;etapa/astudillo;
 Brown-backed Chat-Tyrant;etapa/astudillo;
 Rufous-breasted Chat-Tyrant;etapa/astudillo;
 Chestnut-bellied Chat-Tyrant;etapa;
 Crowned Chat-Tyrant;etapa/astudillo;
-Yellow-bellied Chat-Tyrant;etapa;
+Yellow-bellied Chat-Tyrant;etapa;Ocupa los bosques montanos al occidente del PNC, y prefiere estar solo o en pareja, moviéndose en el follaje denso. A veces se lo puede observar en bandadas mixtas. Es poco común
 Red-rumped Bush-Tyrant;etapa/astudillo;
 Streak-throated Bush-Tyrant;etapa;
 Smoky Bush-Tyrant;etapa;
@@ -122,7 +122,7 @@ Giant Conebill;etapa/astudillo;
 Tit-like Dacnis;etapa/astudillo;
 Masked Flowerpiercer;etapa/astudillo;
 Black Flowerpiercer;etapa/astudillo;
-White-sided Flowerpiecer;etapa;
+White-sided Flowerpiercer;etapa;Habita el bosque montano y sus bordes. Se lo ve en pareja y en bandadas mixtas, moviéndose rápidamente entre el follaje, alimentándose de néctar e insectos. Está registrada en los bosques de estribación al occidente del PNC. Es poco común
 Rufous-chested Tanager;etapa;
 Blue-and-black Tanager;etapa/astudillo;
 Scarlet-bellied Mountain Tanager;etapa/astudillo;
@@ -131,7 +131,7 @@ Blue-winged Mountain Tanager;etapa;
 Black-chested Mountain Tanager;etapa;
 Buff-banded Mountain Tanager;etapa/astudillo;
 Superciliaried Hemispingus;etapa/astudillo;
-Black-headed Hemispingus;etapa;
+Black-headed Hemispingus;etapa;Habita generalmente en la zona arbustiva del límite entre el bosque montano y páramo. Se lo ve en pareja o grupos pequeños y acompañando bandadas mixtas. Rebusca insectos entre el follaje. Es poco común.
 Plushcap;etapa;
 Golden Grosbeak;etapa;
 Plain-colored Seedeater;etapa/astudillo;
@@ -139,7 +139,7 @@ Paramo Seedeater;etapa/astudillo;
 Band-tailed Seedeater;etapa/astudillo;
 Plumbeous Sierra Finch;etapa/astudillo;
 Yellow-breasted Brushfinch;etapa/astudillo;
-White-winged Brushfinch;etapa;
+White-winged Brushfinch;etapa;Habita en matorrales, bosque abierto, áreas agrícolas y jardines. Vive en pareja y grupos pequeños que se mueven activamente a nivel bajo. Existen registros de la especie en los bosques montanos al occidente del PNC, en donde es poco común
 Gray-browed Brushfinch;etapa/astudillo;
 Rufous-collared Sparrow;etapa/astudillo;
 Yellow-billed Cacique;etapa;
@@ -165,3 +165,6 @@ Swainson's Thrush;astudillo;
 Ash-breasted Sierra Finch;astudillo;
 Mountain Caracara;astudillo;
 Torrent Duck;astudillo;
+Blackburnian Warbler;ebird;Foto https://ebird.org/checklist/S44976573
+Purple Gallinule;ebird;Foto https://ebird.org/checklist/S70512214
+Puna Ibis;ebird;Foto https://ebird.org/checklist/S195403831

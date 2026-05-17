@@ -1,7 +1,5 @@
 from bs4 import BeautifulSoup  
-from datetime import datetime, timedelta
 import requests
-import json
 
 def extract_observation_dates(list_urls, migratorias):
     results = {}
@@ -42,7 +40,7 @@ list_urls = [
  'https://ebird.org/hotspot/L8828943/bird-list', # La Calera
  'https://ebird.org/hotspot/L20491806/bird-list', #Tarqui Guzho
 ]
-file_guide = "migratorias.txt"
+file_guide = "dist/migratorias.txt"
 
 migratorias = {}
 with open(file_guide) as fp:
