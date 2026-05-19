@@ -122,12 +122,18 @@ with open(file_guide, newline='', encoding='utf-8') as fp:
 
 only_in_ebird = {k: ebird_data[k] for k in ebird_data.keys() - guia_data.keys()}
 only_in_guide = {k: guia_data[k] for k in guia_data.keys() - ebird_data.keys()}
-new_in_guide = {species: data for species, data in guia_data.items() if data['guia'] == 'ebird'}
-guide_and_ebird = {k: ebird_data[k] for k in ebird_data.keys() & guia_data.keys()}
+
+new_in_guide = {}
+guide_and_ebird = {}
+for species in ebird_data.keys() & guia_data.keys():
+    if guia_data[species]['guia'] == 'ebird':
+        new_in_guide[species] = ebird_data[species]
+    else:
+        guide_and_ebird[species] = ebird_data[species]
 
 sorted_ebird = sorted(only_in_ebird.items(), key=lambda x: x[1]['last_seen'], reverse=True)
 sorted_guide = sorted(only_in_guide.items(), key=lambda x: x[1]['order'])
-sorted_new_guide = sorted(new_in_guide.items(), key=lambda x: x[1]['order'])
+sorted_new_guide = sorted(new_in_guide.items(), key=lambda x: x[1]['last_seen'], reverse=True)
 sorted_guide_and_ebird = sorted(guide_and_ebird.items(), key=lambda x: x[1]['last_seen'], reverse=True)
 
 html = f"""<!DOCTYPE html>
@@ -136,7 +142,7 @@ html = f"""<!DOCTYPE html>
   <meta charset="UTF-8">
   <title>{page_title}</title>
   <style>
-    body {{ font-family: Arial, sans-serif; padding: 20px; max-width: 900px; margin: auto; }}
+    body {{ font-family: Arial, sans-serif; padding: 20px; max-width: 1200px; margin: auto; }}
     h1   {{ color: #2c5f2e; }}
     h2   {{ color: #3a7d44; border-bottom: 1px solid #ccc; padding-bottom: 4px; }}
     table {{ border-collapse: collapse; width: 100%; margin-bottom: 30px; }}
@@ -182,12 +188,16 @@ if(len(new_in_guide)) > 0:
 
     <h2>Nuevo para la guía <span class="badge">({len(new_in_guide)} especies)</span></h2>
     <table>
-        <thead><tr><th>Especie</th><th>Comentarios</th></tr></thead>
+        <thead><tr><th>Especie</th><th>Último avistamiento</th><th>Hotspot</th><th>Observador</th></tr></thead>
         <tbody>
     """
     for species, info in sorted_new_guide:
-        comentarios = linkify(info.get('comentarios') or '—')
-        html += f"      <tr><td>{species}</td><td>{comentarios}</td></tr>\n"
+        date_str = info['last_seen'].strftime('%d/%m/%Y')
+        birder   = info.get('birder') or '—'
+        where    = info.get('where') or '—'
+        checklist = info.get('checklist')
+        html += f"      <tr><td>{species}</td><td><a href='{checklist}'>{date_str}</a></td><td>{where}</td><td>{birder}</td></tr>\n"
+
 
 
 html += f"""    </tbody>
@@ -195,7 +205,7 @@ html += f"""    </tbody>
 
 <h2>En la guía y en eBird <span class="badge">({len(guide_and_ebird)} especies)</span></h2>
 <table>
-    <thead><tr><th>Especie</th><th>Comentarios</th></tr></thead>
+    <thead><tr><th>Especie</th><th>Último avistamiento</th><th>Hotspot</th><th>Observador</th></tr></thead>
     <tbody>
 """
 for species, info in sorted_guide_and_ebird:

@@ -358,7 +358,7 @@
   const content = document.getElementById('content');
   const welcome = document.getElementById('welcome');
   const statusInfo = document.getElementById('status-info');
-
+  const VERSION = '2026_05_19';
   // Cache of panels already created
   const panels = {};
   let activeTab = null;
@@ -373,7 +373,7 @@
     loader.innerHTML = `<span class="bird-anim">🐦</span><span>Cargando…</span>`;
 
     const iframe = document.createElement('iframe');
-    iframe.src = src;
+    iframe.src = `${src}?v=${VERSION}`;
     iframe.onload = () => {
       loader.classList.add('hidden');
     };

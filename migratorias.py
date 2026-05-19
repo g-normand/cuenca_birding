@@ -89,7 +89,7 @@ for hotspot, hotsport_info in sorted_data:
 
 html += "</body></html>"
 
-with open("migratorias.html", "w", encoding="utf-8") as f:
+with open("dist/migratorias.html", "w", encoding="utf-8") as f:
     f.write(html)
 
 print('MIGRATORIAS.HTML : DONE!')
