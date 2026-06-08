@@ -37,19 +37,15 @@ cuenca_birds:
 
 lista_guia_uda:
 	$(VENV) && python3 diff_guide_ebird.py --guide guia_uda
-	@echo "=> lista_guia_uda.html"
 
 lista_ucuenca:
 	$(VENV) && python3 diff_guide_ebird.py --guide ucuenca
-	@echo "=> lista_ucuenca.html"
 
 lista_cajas:
 	$(VENV) && python3 diff_guide_ebird.py --guide cajas
-	@echo "=> lista_cajas.html"
 
 cuenca_migratorias:
 	$(VENV) && python3 migratorias.py
-	@echo "=> migratorias.html"
 
 bird_list_ecuador:
 	$(VENV) && python3 bird_list_ecuador.py
