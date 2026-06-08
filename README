@@ -8,6 +8,7 @@ _________
 make lista_guia_uda
 make lista_ucuenca
 make cuenca_migratorias
+make deploy
 
 
 
