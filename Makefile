@@ -38,11 +38,10 @@ cuenca_birds:
 lista_guia_uda:
 	$(VENV) && python3 diff_guide_ebird.py --guide guia_uda
 
-lista_ucuenca:
+update_html:
 	$(VENV) && python3 diff_guide_ebird.py --guide ucuenca
-
-lista_cajas:
 	$(VENV) && python3 diff_guide_ebird.py --guide cajas
+	$(VENV) && python3 diff_guide_ebird.py --guide yunguilla
 
 cuenca_migratorias:
 	$(VENV) && python3 migratorias.py

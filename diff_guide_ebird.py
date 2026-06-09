@@ -13,7 +13,7 @@ parser.add_argument(
     "--guide",
     type=str,
     required=True,
-    help="Guide name (guia_uda, ucuenca, cajas)"
+    help="Guide name (guia_uda, ucuenca, cajas, yunguilla)"
 )
 
 def linkify(text):
@@ -95,6 +95,14 @@ if (guide == 'ucuenca'):
     file_guide = "files/guia_ucuenca.csv"
     output_file = 'dist/lista_ucuenca.html'
     description = 'Diferencia entre las observaciones en <a href="https://www.inaturalist.org/projects/aves-de-la-universidad-de-cuenca?tab=species">iNaturalist</a> y <a href="https://ebird.org/hotspot/L40907383/bird-list">eBird</a> en la Universidad de Cuenca.'
+elif guide == 'yunguilla':
+    list_urls = [
+     'L600066', #Yunguilla
+    ]
+    page_title = 'Lista Yunguilla vs eBird'
+    file_guide = "files/guia_yunguilla.csv"
+    output_file = 'dist/lista_yunguilla.html'
+    description = 'Diferencia entre la guia de Yunguilla y <a href="https://ebird.org/hotspot/L600066/bird-list">eBird</a> en la reserva.'
 elif (guide == 'cajas'):
     list_urls = [
      'L600072', #Cajas
@@ -183,6 +191,7 @@ html = f"""<!DOCTYPE html>
     th {{ background: #f0f7f0; }}
     tr:hover {{ background: #f9fdf9; }}
     .badge {{ font-size: 0.85em; color: #666; margin-left: 6px; }}
+    .guia_and_ebird_table{{ background-color: darkkhaki; }}
   </style>
 </head>
 <body>
@@ -227,7 +236,7 @@ html += f"""    </tbody>
 </table>
 
 <h2>En la guía y en eBird <span class="badge">({len(guide_and_ebird)} especies)</span></h2>
-<table>
+<table class="guia_and_ebird_table">
     <thead><tr><th>Especie</th><th>Último avistamiento</th><th>Hotspot</th><th>Observador</th><th>Photo?</th></tr></thead>
     <tbody>
 """

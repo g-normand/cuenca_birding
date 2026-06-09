@@ -6,7 +6,7 @@ make bird_list_ecuador &> species.csv
 
 _________
 make lista_guia_uda
-make lista_ucuenca
+make update_html
 make cuenca_migratorias
 make deploy
 
