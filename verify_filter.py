@@ -45,12 +45,12 @@ def extract_species_counts(file_path, region_data):
                 # No info for subspecies
                 continue
             if lim_span:
-            	value = lim_span.get_text(strip=True)
+                value = lim_span.get_text(strip=True)
             else:
-            	value = input_span.get('value')
+                value = input_span.get('value')
             ebird_name = li.get('id').replace('_out', '')
             if ebird_name in region_data:
-            	species_map[name] = region_data[ebird_name]
+                species_map[name] = region_data[ebird_name]
             else:
                 species_map[name] = dict()
             species_map[name]['value'] = int(value)
@@ -58,10 +58,12 @@ def extract_species_counts(file_path, region_data):
     return species_map
     
  
+# Usage
+file1 = 'chimbo'
+region = 'EC-H'
 
-
-region_data = extract_observation_dates('https://ebird.org/region/EC-F/bird-list')
-region_counts = extract_species_counts('files/canar_filter.html', region_data)
+region_data = extract_observation_dates(f'https://ebird.org/region/{region}/bird-list')
+region_counts = extract_species_counts(f'files/{file1}_filter.html', region_data)
 
 sorted_data = dict(sorted(
     region_counts.items(),

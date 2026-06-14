@@ -26,6 +26,9 @@ pip: virtualenv
 clean:
 	find . -name '*.pyc' -delete
 
+diff_azuay_list:
+	$(VENV) && python3 diff_azuay_list.py
+	
 diff_filters:
 	$(VENV) && python3 filters.py
 	
