@@ -13,12 +13,11 @@ def extract_species_counts(file_path):
             is_exotic = li.find('svg', class_='Icon--exoticEscapee') is not None
             if is_exotic:
                 continue
-            ebird_name = li.get('id')
             observer_div = li.find('div', class_='Obs-observer')
-            name = li.find('span', class_='Species-common').get_text(strip=True)
-            if 'sp.' in name or '/' in name:
+            english_name = li.find('span', class_='Species-common').get_text(strip=True)
+            if 'sp.' in english_name or '/' in english_name:
                 continue
-            species_map[name] = 'OK'
+            species_map[english_name] = 'OK'
     return species_map
 
 # Usage

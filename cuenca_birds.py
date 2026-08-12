@@ -15,15 +15,15 @@ def extract_observation_dates(list_urls):
                 is_exotic = li.find('svg', class_='Icon--exoticEscapee') is not None
                 if is_exotic:
                     continue
-                ebird_name = li.get('id')
+                ebird_id = li.get('id')
                 observer_div = li.find('div', class_='Obs-observer')
-                name = li.find('span', class_='Species-common').get_text(strip=True)
-                if 'sp.' in name:
+                english_name = li.find('span', class_='Species-common').get_text(strip=True)
+                if 'sp.' in english_name:
                    continue
                 birder_tag = observer_div.select_one('span:not(.is-visuallyHidden), a')  
                 birder = birder_tag.get_text(strip=True) if birder_tag else None
-                result[ebird_name] = dict(
-                    name=name,
+                result[ebird_id] = dict(
+                    english_name=english_name,
                     last_seen=datetime.strptime(time_tag['datetime'], '%Y-%m-%d %H:%M'),
                     birder=birder)
 
@@ -46,7 +46,7 @@ list_urls = [
 
 azuay_data = extract_observation_dates(list_urls)
 
-for ebird_name in azuay_data:
-    print(azuay_data[ebird_name]['name'])
+for ebird_id in azuay_data:
+    print(azuay_data[ebird_id]['english_name'])
 
 print(f'{len(azuay_data)} birds found in Cuenca this year.')

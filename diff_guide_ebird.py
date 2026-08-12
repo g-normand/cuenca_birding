@@ -51,8 +51,8 @@ def extract_observation_dates(list_hotposts):
                 if is_exotic:
                     continue
                 observer_div = li.find('div', class_='Obs-observer')
-                name = li.find('span', class_='Species-common').get_text(strip=True)
-                if 'sp.' in name:
+                english_name = li.find('span', class_='Species-common').get_text(strip=True)
+                if 'sp.' in english_name:
                    continue
                 birder_tag = observer_div.select_one('span:not(.is-visuallyHidden), a')  
                 birder = birder_tag.get_text(strip=True) if birder_tag else None
@@ -64,19 +64,19 @@ def extract_observation_dates(list_hotposts):
                 if species_code in photo_data:
                     has_photo = True
                     photo_checklist = photo_data[species_code]
-                if name in result:
-                    if last_seen > result[name]['last_seen']:
+                if english_name in result:
+                    if last_seen > result[english_name]['last_seen']:
                         #Newest record
-                        result[name]['where'] = hotspot
-                        result[name]['last_seen'] = last_seen
-                        result[name]['checklist'] = checklist
-                        result[name]['birder'] = birder
+                        result[english_name]['where'] = hotspot
+                        result[english_name]['last_seen'] = last_seen
+                        result[english_name]['checklist'] = checklist
+                        result[english_name]['birder'] = birder
                     #Check for picture
-                    if result[name]['has_photo'] is False and has_photo:
-                        result[name]['has_photo'] = has_photo
-                        result[name]['photo_checklist'] = photo_checklist
+                    if result[english_name]['has_photo'] is False and has_photo:
+                        result[english_name]['has_photo'] = has_photo
+                        result[english_name]['photo_checklist'] = photo_checklist
                 else:
-                    result[name] = dict(
+                    result[english_name] = dict(
                         where=hotspot,
                         last_seen=last_seen,
                         checklist=checklist,
@@ -94,7 +94,7 @@ if (guide == 'ucuenca'):
     page_title = 'Lista U. Cuenca vs eBird'
     file_guide = "files/guia_ucuenca.csv"
     output_file = 'dist/lista_ucuenca.html'
-    description = 'Diferencia entre las observaciones en <a href="https://www.inaturalist.org/projects/aves-de-la-universidad-de-cuenca?tab=species">iNaturalist</a> y <a href="https://ebird.org/hotspot/L40907383/bird-list">eBird</a> en la Universidad de Cuenca.'
+    description = 'Diferencia entre las observaciones en <a href="https://www.inaturalist.org/projects/aves-de-la-universidad-de-cuenca?tab=species" target="_blank">iNaturalist (33 sp)</a> y <a href="https://ebird.org/hotspot/L40907383/bird-list" target="_blank">eBird</a> en la Universidad de Cuenca.'
 elif guide == 'yunguilla':
     list_urls = [
      'L600066', #Yunguilla
@@ -102,7 +102,7 @@ elif guide == 'yunguilla':
     page_title = 'Lista Yunguilla vs eBird'
     file_guide = "files/guia_yunguilla.csv"
     output_file = 'dist/lista_yunguilla.html'
-    description = 'Diferencia entre la guia de Yunguilla y <a href="https://ebird.org/hotspot/L600066/bird-list">eBird</a> en la reserva.'
+    description = 'Diferencia entre la guia de Yunguilla (sept 2011) y <a href="https://ebird.org/hotspot/L600066/bird-list" target="_blank">eBird</a> en la reserva.'
 elif (guide == 'cajas'):
     list_urls = [
      'L600072', #Cajas
@@ -110,7 +110,7 @@ elif (guide == 'cajas'):
     page_title = 'Lista Cajas vs eBird'
     file_guide = "files/guia_cajas.csv"
     output_file = 'dist/lista_cajas.html'
-    description = 'Diferencia entre <a href="https://www.dropbox.com/scl/fi/feft4igmss1v27sz1o9an/Cajas_PAJAROS_GUIA_AVES_2012_FINAL-edited.pdf">la guia del Cajas</a> y <a href="https://ebird.org/hotspot/L600072/bird-list">eBird</a> en el PN El Cajas.'
+    description = 'Diferencia entre <a href="https://www.dropbox.com/s/uokusq1ixpgfxbm/Cajas_PAJAROS_GUIA_AVES_2012_FINAL-edited.pdf?dl=0" target="_blank">la guia del Cajas (2012)</a> y <a href="https://ebird.org/hotspot/L600072/bird-list" target="_blank">eBird</a> en el PN El Cajas.'
 elif guide == 'guia_uda':
     list_urls = [
      'L8552768', #Camino al Cielo
@@ -128,7 +128,7 @@ elif guide == 'guia_uda':
     page_title = 'Lista Guía UDA vs eBird'
     file_guide = "files/guia_uda.csv"
     output_file = 'dist/lista_guia_uda.html'
-    description = 'Diferencia entre <a href="https://biologia.uazuay.edu.ec/sites/biologia.uazuay.edu.ec/files/public/Aves%20de%20los%20bosques%20montanos%20occidentales%20de%20Azuay%20UDA_2.pdf">la guia de la UDA</a> y varios hotspots de eBird en la zona.'
+    description = 'Diferencia entre <a href="https://biologia.uazuay.edu.ec/sites/biologia.uazuay.edu.ec/files/public/Aves%20de%20los%20bosques%20montanos%20occidentales%20de%20Azuay%20UDA_2.pdf" target="_blank">la guia de la UDA (2022)</a> y varios hotspots de eBird en la zona.'
 else:
     raise Error('GUIA DESCONOCIDA')
 
@@ -172,8 +172,8 @@ def info_to_html(info):
     has_photo = info.get('has_photo')
     photo_url = ''
     if has_photo:
-        photo_url = f'<a href="https://ebird.org/checklist/{info.get("photo_checklist")}">{info.get("photo_checklist")}</a>'
-    return f"<tr><td>{species}</td><td><a href='{checklist}'>{date_str}</a></td><td>{where}</td><td>{birder}</td><td>{photo_url}</td></tr>\n"
+        photo_url = f'<a href="https://ebird.org/checklist/{info.get("photo_checklist")}" target="_blank">{info.get("photo_checklist")}</a>'
+    return f"<tr><td>{species}</td><td><a href='{checklist}' target='_blank'>{date_str}</a></td><td>{where}</td><td>{birder}</td><td>{photo_url}</td></tr>\n"
 
 
 

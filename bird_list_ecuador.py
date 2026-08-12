@@ -8,8 +8,8 @@ def extract_observation_dates(url):
     for li in soup.find_all('li', class_='BirdList-list-list-item'):
         time_tag = li.find('time')
         if time_tag and time_tag.has_attr('datetime'):
-            ebird_name = li.get('id')
-            species = li.find('span', class_='Species-common').get_text(strip=True)
-            print(f'{ebird_name};{species}')
+            ebird_id = li.get('id')
+            english_name = li.find('span', class_='Species-common').get_text(strip=True)
+            print(f'{ebird_id};{english_name}')
 
 extract_observation_dates('https://ebird.org/region/EC/bird-list')

@@ -18,12 +18,12 @@ def extract_observation_dates(list_urls, migratorias):
                 is_exotic = li.find('svg', class_='Icon--exoticEscapee') is not None
                 if is_exotic:
                     continue
-                name = li.find('span', class_='Species-common').get_text(strip=True)
-                if 'sp.' in name:
+                english_name = li.find('span', class_='Species-common').get_text(strip=True)
+                if 'sp.' in english_name:
                    continue
                    
-                if name in migratorias:
-                    results[hotspot]['birds'].append(name)
+                if english_name in migratorias:
+                    results[hotspot]['birds'].append(english_name)
     return results
 
 list_urls = [

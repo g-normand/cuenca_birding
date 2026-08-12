@@ -328,8 +328,8 @@
     <div class="header-top">
       <h1>Aves de Cuenca</h1>
       <div class="d-flex bg-dark text-light align-items-center px-3 py-2 w-100 justify-content-between">
-          <a href="https://guiguide.alwaysdata.net/" target="_blank" title="guiguide.alwaysdata.net"
-            ><img src="files/logo_guiguide.svg" class="zozio"></img>
+          <a id="logo" href="https://guiguide.alwaysdata.net/" target="_blank" title="guiguide.alwaysdata.net"
+            ><img src="files/logo_guiguide2.png" class="zozio"></img>
           </a>
       </div>
     </div>
@@ -377,6 +377,8 @@
   // Cache of panels already created
   const panels = {};
   let activeTab = null;
+  const logo = document.getElementById('logo');
+  logo.title = VERSION;
 
   function makePanel(src) {
     const panel = document.createElement('div');

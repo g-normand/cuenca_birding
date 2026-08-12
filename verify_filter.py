@@ -15,12 +15,12 @@ def extract_observation_dates(url):
             is_exotic = li.find('svg', class_='Icon--exoticEscapee') is not None
             if is_exotic:
                 continue
-            ebird_name = li.get('id')
+            ebird_id = li.get('id')
             observer_div = li.find('div', class_='Obs-observer')
             birder_tag = observer_div.select_one('span:not(.is-visuallyHidden), a')  
             birder = birder_tag.get_text(strip=True) if birder_tag else None
             has_pictures = li.find('svg', class_='Icon--photo') is not None
-            result[ebird_name] = dict(
+            result[ebird_id] = dict(
                 last_seen=datetime.strptime(time_tag['datetime'], '%Y-%m-%d %H:%M'),
                 birder=birder, 
                 has_pictures=has_pictures)
@@ -48,9 +48,9 @@ def extract_species_counts(file_path, region_data):
                 value = lim_span.get_text(strip=True)
             else:
                 value = input_span.get('value')
-            ebird_name = li.get('id').replace('_out', '')
-            if ebird_name in region_data:
-                species_map[name] = region_data[ebird_name]
+            ebird_id = li.get('id').replace('_out', '')
+            if ebird_id in region_data:
+                species_map[name] = region_data[ebird_id]
             else:
                 species_map[name] = dict()
             species_map[name]['value'] = int(value)

@@ -4,28 +4,28 @@ __________
 make cuenca_birds
 make bird_list_ecuador &> species.csv
 
+# Check the current list of Azuay birds
+make diff_azuay_list
 _________
 # Don't forget to add a precommit
 cp pre-commit.sample .git/hooks/pre-commit
 chmod +x .git/hooks/pre-commit
 
-make lista_guia_uda
+# How to update ?
 make update_html
-make cuenca_migratorias
 git add dist/
 # Will deploy automatically
 # Check info at https://github.com/g-normand/cuenca_birding/settings/pages
 
 
 
+
+
 ___________________
 FILTERS IN EBIRDS
 __________________
-
-make pip
 make diff_filters
-
-To verify the Chimbo filter is working well:
+# To verify the Chimbo filter is working well:
 make verify_filter
 
 To get the infos:
