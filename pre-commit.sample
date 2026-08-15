@@ -1,3 +1,0 @@
-#!/bin/sh
-echo "const VERSION = '$(date +%Y%m%d_%H%M%S)';" > version.js
-git add version.js

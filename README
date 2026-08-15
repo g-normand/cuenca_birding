@@ -6,20 +6,6 @@ make bird_list_ecuador &> species.csv
 
 # Check the current list of Azuay birds
 make diff_azuay_list
-_________
-# Don't forget to add a precommit
-cp pre-commit.sample .git/hooks/pre-commit
-chmod +x .git/hooks/pre-commit
-
-# How to update ?
-make update_html
-git add dist/
-# Will deploy automatically
-# Check info at https://github.com/g-normand/cuenca_birding/settings/pages
-
-
-
-
 
 ___________________
 FILTERS IN EBIRDS

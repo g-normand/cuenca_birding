@@ -28,26 +28,15 @@ clean:
 
 diff_azuay_list:
 	$(VENV) && python3 diff_azuay_list.py
-	
+
 diff_filters:
 	$(VENV) && python3 filters.py
-	
+
 verify_filter:
 	$(VENV) && python3 verify_filter.py
 
 cuenca_birds:
 	$(VENV) && python3 cuenca_birds.py
 
-update_html:
-	$(VENV) && python3 diff_guide_ebird.py --guide ucuenca
-	$(VENV) && python3 diff_guide_ebird.py --guide cajas
-	$(VENV) && python3 diff_guide_ebird.py --guide yunguilla
-	$(VENV) && python3 diff_guide_ebird.py --guide guia_uda
-	$(VENV) && python3 migratorias.py
-
 bird_list_ecuador:
 	$(VENV) && python3 bird_list_ecuador.py
-
-deploy:
-	scp -r dist/* guiguide@ssh-guiguide.alwaysdata.net:/home/guiguide/www/cuenca_birds/
-	git tag $(TAG_DATE); git push origin $(TAG_DATE) --no-verify
